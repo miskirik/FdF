@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 08:21:12 by miskirik          #+#    #+#             */
-/*   Updated: 2022/08/12 03:49:10 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/08/13 05:46:49 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	main(int argc, char **argv)
 	t_fdf	*mlx;
 	first_check(argc, argv);
 	mlx = (t_fdf *)malloc(sizeof(t_fdf));
+	mlx->draw=(t_draw *)malloc(sizeof(t_draw));
+	mlx->map=(t_map *)malloc(sizeof(t_map));
 	read_map(argv[1], mlx);
 	mlx->mlx_ptr = mlx_init();
 	mlx->win_ptr = mlx_new_window(mlx->mlx_ptr, 1920, 1080, "FdF");

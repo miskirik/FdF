@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 07:58:24 by miskirik          #+#    #+#             */
-/*   Updated: 2022/08/12 03:26:09 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/08/13 05:46:08 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,28 @@
 # include "mlx.h"
 # include <math.h>
 
+typedef struct s_draw
+{
+	float	param_x;
+	float	param_y;
+	float	param_x1;
+	float	param_y1;
+	int		color;
+	int		color_flag;
+	int		*cords_ptr;
+}				t_draw;
+
+typedef struct s_map
+{
+	int		width;
+	int		height;
+	int		**z_matrix;
+	int		shift_x;
+	int		shift_y;
+	float	zoom;
+	double	degree;
+}				t_map;
+
 typedef struct s_fdf
 {
 	void	*mlx_ptr;
@@ -31,22 +53,8 @@ typedef struct s_fdf
 	int		bits_per_pixel;
 	int		size_line;
 	int		endian;
-	int		width;
-	int		height;
-	int		*cords_ptr;
-	int		*color_ptr;
-	int		**z_matrix;
-	int		shift_x;
-	int		shift_y;
-	float	zoom;
-	double	degree;
-	int		color;
-	float	param_x;
-	float	param_y;
-	float	param_x1;
-	float	param_y1;
-	int		color_flag;
-
+	t_draw	*draw;
+	t_map	*map;
 }				t_fdf;
 
 void	fill_matrix(int *z, char *line);

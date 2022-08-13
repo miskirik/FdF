@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 01:06:21 by miskirik          #+#    #+#             */
-/*   Updated: 2022/08/12 05:39:41 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/08/13 05:56:32 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,31 +34,31 @@ int	ft_count(const char *str, char c)
 
 void	spec_data(t_fdf *mlx)
 {
-	mlx->color = 0xff0000;
-	mlx->color_flag = 0;
-	mlx->degree = 0.8;
-	mlx->shift_x = 760;
-	mlx->param_x = 0;
-	mlx->param_x1 = 0;
-	mlx->param_y = 0;
-	mlx->shift_y = 340;
-	mlx->param_y1 = 0;
-	mlx->zoom = 30;
+	mlx->draw->color = 0xff0000;
+	mlx->draw->color_flag = 0;
+	mlx->map->degree = 0.8;
+	mlx->map->shift_x = 760;
+	mlx->draw->param_x = 0;
+	mlx->draw->param_x1 = 0;
+	mlx->draw->param_y = 0;
+	mlx->map->shift_y = 340;
+	mlx->draw->param_y1 = 0;
+	mlx->map->zoom = 30;
 }
 
 void	set_cord(t_fdf *mlx, int x, int y, int flag)
 {
-	mlx->param_x = x;
-	mlx->param_y = y;
+	mlx->draw->param_x = x;
+	mlx->draw->param_y = y;
 	if (flag == 0)
 	{
-		mlx->param_y1 = y;
-		mlx->param_x1 = x + 1;
+		mlx->draw->param_y1 = y;
+		mlx->draw->param_x1 = x + 1;
 	}
 	else
 	{
-		mlx->param_y1 = y + 1;
-		mlx->param_x1 = x;
+		mlx->draw->param_y1 = y + 1;
+		mlx->draw->param_x1 = x;
 	}
 }
 
@@ -77,13 +77,13 @@ void	my_mlx_pixel_put(t_fdf *mlx, int x, int y, int color)
 void	color(t_fdf *mlx, int z, int z1, int flag)
 {
 	if ((z1 || z) && flag == 1)
-		mlx->color = 0x4E4AD5;
+		mlx->draw->color = 0x4E4AD5;
 	else if ((z1 || z) && !flag)
-		mlx->color = 0xDEC039;
+		mlx->draw->color = 0xDEC039;
 	else if ((z1 || z) && flag == 2)
-		mlx->color = 0xFFFFFF;
+		mlx->draw->color = 0xFFFFFF;
 	else if (!(z || z1) && flag == 2)
-		mlx->color = 0xE30A17;
+		mlx->draw->color = 0xE30A17;
 	else if (flag != 2)
-		mlx->color = 0xFFFFFF;
+		mlx->draw->color = 0xFFFFFF;
 }

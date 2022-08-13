@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 23:37:58 by miskirik          #+#    #+#             */
-/*   Updated: 2022/08/12 00:43:55 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/08/13 05:54:12 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int	get_width(char *file)
 		file_error();
 	width = ft_count(line, ' ');
 	free (line);
+	close(fd);
 	return (width);
 }
 
@@ -74,12 +75,12 @@ void	read_map(char *file, t_fdf *mlx)
 	char	*line;
 
 	c = 0;
-	mlx->width = get_width(file);
-	mlx->height = get_height(file);
-	mlx->z_matrix = (int **)malloc(sizeof(int *) * (mlx->height + 1));
-	while (c <= mlx->height)
+	mlx->map->width = get_width(file);
+	mlx->map->height = get_height(file);
+	mlx->map->z_matrix = (int **)malloc(sizeof(int *) * (mlx->map->height + 1));
+	while (c <= mlx->map->height)
 	{
-		mlx->z_matrix[c] = (int *)malloc(sizeof(int *) * (mlx->width + 1));
+		mlx->map->z_matrix[c] = (int *)malloc(sizeof(int *) * (mlx->map->width + 1));
 		c++;
 	}
 	fd = open(file, O_RDONLY);
@@ -87,7 +88,7 @@ void	read_map(char *file, t_fdf *mlx)
 	line = get_next_line(fd);
 	while (line != NULL)
 	{
-		fill_matrix(mlx->z_matrix[c], line);
+		fill_matrix(mlx->map->z_matrix[c], line);
 		free (line);
 		line = get_next_line(fd);
 		c++;
