@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 08:21:12 by miskirik          #+#    #+#             */
-/*   Updated: 2022/08/13 05:46:49 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/08/14 06:12:36 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	main(int argc, char **argv)
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, mlx->img, 0, 0);
 	spec_data(mlx);
 	draw(mlx);
+	handler_m(mlx);
+	mlx_key_hook(mlx->win_ptr,handler_k,mlx);
 	mlx_loop(mlx->mlx_ptr);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 07:58:24 by miskirik          #+#    #+#             */
-/*   Updated: 2022/08/13 05:46:08 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/08/14 06:17:41 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 # include "./ft_printf/ft_printf.h"
 # include "./get_next_line/get_next_line.h"
 # include "./libft/libft.h"
-# include "mlx.h"
+# include "./minilibx/mlx.h"
+# include "keys.h"
 # include <math.h>
 
 typedef struct s_draw
@@ -70,10 +71,19 @@ void	shift(t_fdf *mlx);
 void	draw(t_fdf *mlx);
 void	file_error(void);
 void	first_check(int argc, char **argv);
+void	shift_k(int key,t_fdf *mlx);
+void	degree_k(int key, t_fdf *mlx);
+void	color_k(int key,t_fdf *mlx);
+void	free_data(t_fdf *mlx);
+void	handler_m(t_fdf *mlx);
+void handler_ok(t_fdf *mlx);
+int mouse_c(t_fdf *mlx);
+int mouse_r(int key,int x,int y,t_fdf *mlx);
 int		get_width(char *file);
 int		get_height(char *file);
 int		ft_count(const char *str, char c);
 int		check_arg(char *str);
+int handler_k(int key, t_fdf *mlx);
 float	maxf(float a, float b);
 float	mod(float num);
 #endif
