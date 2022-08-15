@@ -10,13 +10,15 @@ NAME			= libftprintf.a
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+				@ar rcs $(NAME) $(OBJS)
+%.o: %.c $(INC)
+	@$(CC) -c $< -o $@ $(CFLAGS)
 
 clean:
-				$(RM) $(OBJS)
+				@$(RM) $(OBJS)
 
 fclean:			clean
-				$(RM) $(NAME)
+				@$(RM) $(NAME)
 
 re:				fclean $(NAME)
 

@@ -9,17 +9,17 @@ all : ${NAME}
 
 
 $(NAME) : ${OBJS}
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJS)
+	@ranlib $(NAME)
 
 .c.o :
-	${CC} ${CFLAGS} -c $< -o $@
+	@${CC} ${CFLAGS} -c $< -o $@
 
 clean :
-	${RM} ${OBJS}
+	@${RM} ${OBJS}
 
 fclean : clean
-	${RM} ${NAME}
+	@${RM} ${NAME}
 
 re : fclean all
 
