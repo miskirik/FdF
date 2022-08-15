@@ -1,4 +1,9 @@
 #include "fdf.h"
+
+void disco(t_fdf *mlx)
+{
+	ft_printf("%d",mlx->sov);
+}
 void handler_ok(t_fdf *mlx)
 {
 	mlx_clear_window(mlx->mlx_ptr,mlx->win_ptr);
@@ -25,6 +30,8 @@ int handler_k(int key, t_fdf *mlx)
 		color_k(key,mlx);
 	else if(key==KEY_R)
 		spec_data(mlx);
+	else if(key==KEY_E && mlx->sov==1)
+		disco(mlx);
 	else if (key==KEY_ESCAPE)
 		free_data(mlx);
 	handler_ok(mlx);

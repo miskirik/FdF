@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 01:06:21 by miskirik          #+#    #+#             */
-/*   Updated: 2022/08/13 05:56:32 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/08/15 05:32:10 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_count(const char *str, char c)
 
 void	spec_data(t_fdf *mlx)
 {
-	mlx->draw->color = 0xff0000;
+	mlx->draw->color = 0xFF0000;
 	mlx->draw->color_flag = 0;
 	mlx->map->degree = 0.8;
 	mlx->map->shift_x = 760;

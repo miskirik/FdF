@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 07:58:24 by miskirik          #+#    #+#             */
-/*   Updated: 2022/08/14 06:17:41 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/08/15 03:50:51 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct s_fdf
 	int		bits_per_pixel;
 	int		size_line;
 	int		endian;
+	int		sov;
 	t_draw	*draw;
 	t_map	*map;
 }				t_fdf;
@@ -70,7 +71,7 @@ void	bersenham(t_fdf *mlx);
 void	shift(t_fdf *mlx);
 void	draw(t_fdf *mlx);
 void	file_error(void);
-void	first_check(int argc, char **argv);
+int	first_check(int argc, char **argv);
 void	shift_k(int key,t_fdf *mlx);
 void	degree_k(int key, t_fdf *mlx);
 void	color_k(int key,t_fdf *mlx);
