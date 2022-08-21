@@ -6,17 +6,15 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 10:07:45 by miskirik          #+#    #+#             */
-/*   Updated: 2022/08/21 10:11:55 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/08/21 10:14:33 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KEYCODE_MAC_H
-# define KEYCODE_MAC_H
+#ifndef KEYS_H
+# define KEYS_H
 
 # define KEYPRESS			2
 # define KEYRELEASE			3
-# define KEYPRESSMASK		(1L << 0)
-# define KEYRELEASEMASK		(1L << 1)
 # define KEY_ESCAPE			53
 # define KEY_BACKSPACE		51
 # define KEY_W				13
