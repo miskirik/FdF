@@ -40,6 +40,7 @@ $(NAME) : ${OBJS}
 	@${CC} ${CFLAGS} -c $< -o $@ -I$(INC_PR) -I$(INC_GN) -I$(INC_FT) -I$(INC_MX)
 clean :
 	@${RM} ${OBJS}
+	@echo "\x1b[32mClean success\x1b[0m"
 
 fclean : clean
 	@${RM} ${NAME}
@@ -49,7 +50,6 @@ ffclean: fclean
 	@make fclean -C ./ft_printf
 	@make fclean -C ./get_next_line
 	@make clean -C ./minilibx
-	@echo "\x1b[32mClean success\x1b[0m"
 
 norm :
 	@norminette draw.c errors.c fdf.h main.c read_map.c utils.c utils2.c
