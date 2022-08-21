@@ -52,7 +52,7 @@ ffclean: fclean
 	@make clean -C ./minilibx
 
 norm :
-	@norminette draw.c errors.c fdf.h main.c read_map.c utils.c utils2.c
+	@norminette draw.c errors.c fdf.h main.c read_map.c utils.c utils2.c events.c handler.c keys.h
 
 re : fclean all
 

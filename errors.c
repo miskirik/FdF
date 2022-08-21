@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 23:20:00 by miskirik          #+#    #+#             */
-/*   Updated: 2022/08/21 05:02:45 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/08/21 10:12:32 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,5 @@ void	free_data(t_fdf *mlx)
 	free(mlx->map->z_matrix);
 	free(mlx->draw);
 	free(mlx);
-	system("Leaks fdf");
 	exit(0);
 }
