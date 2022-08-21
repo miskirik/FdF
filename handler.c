@@ -25,7 +25,7 @@ int handler_k(int key, t_fdf *mlx)
 		shift_k(key,mlx);
 	else if(key==KEY_UP||key==KEY_DOWN)
 		degree_k(key,mlx);
-	else if(key==KEY_C||key==KEY_V||key==KEY_T)
+	else if(key==KEY_Z||key==KEY_X)
 		color_k(key,mlx);
 	else if(key==KEY_BACKSPACE)
 		spec_data(mlx);

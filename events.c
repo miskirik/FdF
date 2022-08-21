@@ -38,10 +38,8 @@ void	degree_k(int key, t_fdf *mlx)
 }
 void	color_k(int key,t_fdf *mlx)
 {
-	if(key==KEY_C)
+	if(key==KEY_Z)
 		mlx->draw->color_flag =1;
-	if(key==KEY_V)
-		mlx->draw->color_flag =0;
-	if(key==KEY_T)
+	if(key==KEY_X)
 		mlx->draw->color_flag =2;
 }
