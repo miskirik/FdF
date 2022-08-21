@@ -6,13 +6,13 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 03:16:56 by miskirik          #+#    #+#             */
-/*   Updated: 2022/08/15 05:11:31 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/08/21 05:01:57 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	bersenham(t_fdf *mlx)
+void	bresenham(t_fdf *mlx)
 {
 	float	x_step;
 	float	y_step;
@@ -34,7 +34,8 @@ void	bersenham(t_fdf *mlx)
 	while ((int)(mlx->draw->param_y - mlx->draw->param_y1) ||
 		(int)(mlx->draw->param_x - mlx->draw->param_x1))
 	{
-		my_mlx_pixel_put(mlx, mlx->draw->param_x, mlx->draw->param_y, mlx->draw->color);
+		my_mlx_pixel_put(mlx, mlx->draw->param_x, \
+		mlx->draw->param_y, mlx->draw->color);
 		mlx->draw->param_x += x_step;
 		mlx->draw->param_y += y_step;
 	}
@@ -54,12 +55,12 @@ void	draw(t_fdf *mlx)
 			if (x < mlx->map->width - 1)
 			{
 				set_cord(mlx, x, y, 0);
-				bersenham(mlx);
+				bresenham(mlx);
 			}
 			if (y < mlx->map->height - 1)
 			{
 				set_cord(mlx, x, y, 1);
-				bersenham(mlx);
+				bresenham(mlx);
 			}
 			x++;
 		}

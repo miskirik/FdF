@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 01:06:21 by miskirik          #+#    #+#             */
-/*   Updated: 2022/08/15 05:32:10 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/08/21 05:06:34 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ void	spec_data(t_fdf *mlx)
 {
 	mlx->draw->color = 0xFF0000;
 	mlx->draw->color_flag = 0;
-	mlx->map->degree = 0.8;
-	mlx->map->shift_x = 760;
+	mlx->map->degree = 0.6;
+	mlx->map->shift_x = mlx->map->width + 1000;
 	mlx->draw->param_x = 0;
 	mlx->draw->param_x1 = 0;
 	mlx->draw->param_y = 0;
-	mlx->map->shift_y = 340;
+	mlx->map->shift_y = mlx->map->height + 750;
 	mlx->draw->param_y1 = 0;
-	mlx->map->zoom = 30;
+	mlx->map->zoom = 20;
 }
 
 void	set_cord(t_fdf *mlx, int x, int y, int flag)

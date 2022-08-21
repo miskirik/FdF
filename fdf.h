@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 07:58:24 by miskirik          #+#    #+#             */
-/*   Updated: 2022/08/15 03:50:51 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/08/21 05:03:50 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ typedef struct s_draw
 	float	param_y1;
 	int		color;
 	int		color_flag;
-	int		*cords_ptr;
 }				t_draw;
 
 typedef struct s_map
@@ -54,7 +53,6 @@ typedef struct s_fdf
 	int		bits_per_pixel;
 	int		size_line;
 	int		endian;
-	int		sov;
 	t_draw	*draw;
 	t_map	*map;
 }				t_fdf;
@@ -67,24 +65,24 @@ void	my_mlx_pixel_put(t_fdf *mlx, int x, int y, int color);
 void	color(t_fdf *mlx, int z, int z1, int flag);
 void	zoom(t_fdf *mlx);
 void	isometric(t_fdf *mlx, int z, int z1);
-void	bersenham(t_fdf *mlx);
+void	bresenham(t_fdf *mlx);
 void	shift(t_fdf *mlx);
 void	draw(t_fdf *mlx);
 void	file_error(void);
-int	first_check(int argc, char **argv);
-void	shift_k(int key,t_fdf *mlx);
+void	first_check(int argc, char **argv);
+void	shift_k(int key, t_fdf *mlx);
 void	degree_k(int key, t_fdf *mlx);
-void	color_k(int key,t_fdf *mlx);
+void	color_k(int key, t_fdf *mlx);
 void	free_data(t_fdf *mlx);
 void	handler_m(t_fdf *mlx);
-void handler_ok(t_fdf *mlx);
-int mouse_c(t_fdf *mlx);
-int mouse_r(int key,int x,int y,t_fdf *mlx);
+void	handler_ok(t_fdf *mlx);
+int		mouse_c(t_fdf *mlx);
+int		mouse_r(int key, int x, int y, t_fdf *mlx);
 int		get_width(char *file);
 int		get_height(char *file);
 int		ft_count(const char *str, char c);
 int		check_arg(char *str);
-int handler_k(int key, t_fdf *mlx);
+int		handler_k(int key, t_fdf *mlx);
 float	maxf(float a, float b);
 float	mod(float num);
 #endif

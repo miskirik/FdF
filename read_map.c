@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 23:37:58 by miskirik          #+#    #+#             */
-/*   Updated: 2022/08/13 05:54:12 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/08/21 05:05:45 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,8 @@ void	read_map(char *file, t_fdf *mlx)
 	mlx->map->z_matrix = (int **)malloc(sizeof(int *) * (mlx->map->height + 1));
 	while (c <= mlx->map->height)
 	{
-		mlx->map->z_matrix[c] = (int *)malloc(sizeof(int *) * (mlx->map->width + 1));
+		mlx->map->z_matrix[c] = (int *)malloc(sizeof(int *) \
+		* (mlx->map->width + 1));
 		c++;
 	}
 	fd = open(file, O_RDONLY);

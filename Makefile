@@ -49,7 +49,7 @@ ffclean: fclean
 	@make fclean -C ./ft_printf
 	@make fclean -C ./get_next_line
 	@make clean -C ./minilibx
-	@echo "Clean success"
+	@echo "\x1b[32mClean success\x1b[0m"
 
 norm :
 	@norminette draw.c errors.c fdf.h main.c read_map.c utils.c utils2.c

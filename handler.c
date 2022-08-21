@@ -1,9 +1,5 @@
 #include "fdf.h"
 
-void disco(t_fdf *mlx)
-{
-	ft_printf("%d",mlx->sov);
-}
 void handler_ok(t_fdf *mlx)
 {
 	mlx_clear_window(mlx->mlx_ptr,mlx->win_ptr);
@@ -21,6 +17,9 @@ void	handler_m(t_fdf *mlx)
 }
 int handler_k(int key, t_fdf *mlx)
 {
+	int i;
+
+	i=0;
 
 	if(key==KEY_W||key==KEY_A||key==KEY_S||key==KEY_D)
 		shift_k(key,mlx);
@@ -28,10 +27,8 @@ int handler_k(int key, t_fdf *mlx)
 		degree_k(key,mlx);
 	else if(key==KEY_C||key==KEY_V||key==KEY_T)
 		color_k(key,mlx);
-	else if(key==KEY_R)
+	else if(key==KEY_BACKSPACE)
 		spec_data(mlx);
-	else if(key==KEY_E && mlx->sov==1)
-		disco(mlx);
 	else if (key==KEY_ESCAPE)
 		free_data(mlx);
 	handler_ok(mlx);

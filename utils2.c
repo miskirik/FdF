@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 23:56:34 by miskirik          #+#    #+#             */
-/*   Updated: 2022/08/14 05:50:15 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/08/21 05:16:30 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,14 @@ void	zoom(t_fdf *mlx)
 
 void	isometric(t_fdf *mlx, int z, int z1)
 {
-	mlx->draw->param_x = (mlx->draw->param_x - mlx->draw->param_y) * cos(mlx->map->degree);
-	mlx->draw->param_y = (mlx->draw->param_x + mlx->draw->param_y) * sin(mlx->map->degree) - z;
-	mlx->draw->param_x1 = (mlx->draw->param_x1 - mlx->draw->param_y1) * cos(mlx->map->degree);
-	mlx->draw->param_y1 = (mlx->draw->param_x1 + mlx->draw->param_y1) * sin(mlx->map->degree) - z1;
+	mlx->draw->param_x = (mlx->draw->param_x - mlx->draw->param_y) \
+	* cos(mlx->map->degree);
+	mlx->draw->param_y = (mlx->draw->param_x + mlx->draw->param_y) \
+	* sin(mlx->map->degree) - z;
+	mlx->draw->param_x1 = (mlx->draw->param_x1 - mlx->draw->param_y1) \
+	* cos(mlx->map->degree);
+	mlx->draw->param_y1 = (mlx->draw->param_x1 + mlx->draw->param_y1) \
+	* sin(mlx->map->degree) - z1;
 }
 
 float	maxf(float a, float b)

@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 23:20:00 by miskirik          #+#    #+#             */
-/*   Updated: 2022/08/15 03:55:22 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/08/21 05:02:45 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,9 @@ void	file_error(void)
 	exit(1);
 }
 
-int	first_check(int argc, char **argv)
+void	first_check(int argc, char **argv)
 {
-	int check;
-	check=0;
-	if (argc == 3 && (ft_strnstr(argv[2], "sov",3)))
-		check++;
-	ft_printf("check=%d\nargc=%d\n",check,argc);
-	if (argc != 2 && check==0)
+	if (argc != 2)
 	{
 		ft_printf("Invalid Arguman input\n");
 		exit(1);
@@ -35,20 +30,23 @@ int	first_check(int argc, char **argv)
 		ft_printf("Error. Invalid Map extension use .fdf");
 		exit(1);
 	}
-	return(check);
 }
+
 void	free_data(t_fdf *mlx)
 {
 	int	y;
 
 	y = 0;
-	while (y < mlx->map->height)
+	while (y < mlx->map->height + 1)
 	{
 		free(mlx->map->z_matrix[y++]);
 	}
 	mlx_destroy_image(mlx->mlx_ptr, mlx->img);
 	mlx_destroy_window(mlx->mlx_ptr, mlx->win_ptr);
+	free(mlx->map);
 	free(mlx->map->z_matrix);
+	free(mlx->draw);
 	free(mlx);
+	system("Leaks fdf");
 	exit(0);
 }
